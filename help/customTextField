@@ -1,0 +1,9 @@
+const CustomTextField = withStyles({
+  root: {
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderRadius: `1rem`,
+      },
+    },
+  },
+})(TextField);

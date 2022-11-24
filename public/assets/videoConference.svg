@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="194.411" height="88.961" viewBox="0 0 117 101.632">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_142" data-name="Rectangle 142" width="37" height="27" transform="translate(0.172 0.008)" fill="none" stroke="#000" stroke-width="4"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_143" data-name="Rectangle 143" width="51" height="20" transform="translate(-0.238 -0.264)" fill="#fff" stroke="#000" stroke-width="4"/>
+    </clipPath>
+  </defs>
+  <g id="Group_451" data-name="Group 451" transform="translate(-5884 -3464)">
+    <g id="Group_450" data-name="Group 450" transform="translate(17)">
+      <g id="Group_428" data-name="Group 428" transform="translate(5906.828 3479.561)">
+        <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(6.172 0.439)" fill="none" stroke="#000" stroke-width="4">
+          <circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+          <circle cx="12.5" cy="12.5" r="10.5" fill="none"/>
+        </g>
+        <g id="Mask_Group_3" data-name="Mask Group 3" transform="translate(0 23.431)" clip-path="url(#clip-path)">
+          <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(0.172 0.008)" fill="none" stroke="#000" stroke-width="4">
+            <ellipse cx="18.5" cy="20" rx="18.5" ry="20" stroke="none"/>
+            <ellipse cx="18.5" cy="20" rx="16.5" ry="18" fill="none"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_449" data-name="Group 449">
+        <g id="Rectangle_141" data-name="Rectangle 141" transform="translate(5867 3464)" fill="none" stroke="#000" stroke-width="4">
+          <rect width="117" height="81" rx="18" stroke="none"/>
+          <rect x="2" y="2" width="113" height="77" rx="16" fill="none"/>
+        </g>
+        <path id="Path_90" data-name="Path 90" d="M2907.4,3901.416h56.27" transform="translate(2989.976 -337.784)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"/>
+        <g id="Mask_Group_4" data-name="Mask Group 4" transform="translate(5900.238 3543.264)" clip-path="url(#clip-path-2)">
+          <g id="Polygon_6" data-name="Polygon 6" transform="translate(2.762 -12.264)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.5,0,45,34H0Z" stroke="none"/>
+            <path d="M 22.5 7.248128890991211 L 7.443614959716797 30 L 37.5563850402832 30 L 22.5 7.248128890991211 M 22.5 0 L 45 34 L 0 34 L 22.5 0 Z" stroke="none"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path id="Path_91" data-name="Path 91" d="M2955.1,3754h30.87" transform="translate(2971.976 -224.619)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"/>
+  </g>
+</svg>
