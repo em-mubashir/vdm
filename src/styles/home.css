@@ -38,7 +38,7 @@
   padding: 1.4rem;
 }
 .contactUs {
-  grid-template-columns: 35% 65%;
+  grid-template-columns: 46% 48%;
 }
 .grid-auto-2 {
   grid-template-columns: max-content auto;
