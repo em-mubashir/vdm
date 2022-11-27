@@ -6,9 +6,9 @@ function Contact() {
       <span className='font-bold text-[54px] text-center w-full p-[1.4rem] sm:text-[1.5rem] sm:p-[10px]'>
         Contact Us
       </span>
-      <Box className='grid contactUs sm:w-full p-40'>
+      <Box className='grid contactUs sm:w-full sm:p-0 p-40'>
         {/* ml-32 */}
-        <Box className='w-full h-full grid sm:place-self-center '>
+        <Box className='w-full h-full grid sm:place-self-center sm:pb-20'>
           <img className='sm:hidden p-9' src='/assets/logoBlack.svg' />
 
           <Box className='grid grid-flow-col grid-auto-2 ml-8 text-[1.3rem] md:text-[1rem] sm:justify-center sm:mt-[20px] '>
