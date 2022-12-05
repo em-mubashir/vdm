@@ -5,6 +5,7 @@ import Why from "./Why";
 import How from "./how/How";
 import Register from "./Register";
 import Contact from "./Contact";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   return (

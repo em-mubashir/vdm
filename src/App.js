@@ -6,7 +6,11 @@ import MyNav from "./components/MyNav";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { defaultThemeOptions } from "./theme/defaultThemeOptions";
 import React, { Suspense } from "react";
+import Signup from "./pages/auth/signup";
+import Login from "./pages/auth/login";
+import ContactUs from "./pages/contact";
 import { blue, red, deepPurple } from "@mui/material/colors";
+import Footer from "./components/Footer";
 function App() {
   const Home = React.lazy(() => import("./pages/home/Home"));
   const theme = createTheme({
@@ -54,8 +58,13 @@ function App() {
           <Routes>
             {/* <Route path='/' element={<Navigate to='/' />} /> */}
             <Route path='/' element={<Home />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/contact-us' element={<ContactUs />} />
+
             {/* <Route path="/contact" element={<Home />} /> */}
           </Routes>
+          <Footer />
         </BrowserRouter>
       </Suspense>
     </ThemeProvider>

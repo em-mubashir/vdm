@@ -7,7 +7,8 @@ function Why() {
       <p className='text-[54px] text-center w-full font-bold p-[1.4rem] md:text-[1.8rem] md:p-[10px] xs:text-red-400'>
         Why Choose Us
       </p>
-      <Box className='grid grid-cols-2 w-full img-text-div p-20 gap-x-10 gap-y-20 md:grid-cols-1'>
+      <Box className='grid grid-cols-2 w-full img-text-div p-20 gap-x-10 gap-y-20 '>
+        {/* md:grid-cols-1 */}
         <Box className='place-self-center md:w-full md:text-[1rem]'>
           <img src='/assets/manager-selling.png' />
         </Box>
@@ -17,7 +18,8 @@ function Why() {
           have income producing, product selling, finance managers available
           24/7.
         </Box>
-        <Box className='p-10 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] md:row-start-4'>
+        <Box className='p-10 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] '>
+          {/* md:row-start-4 */}
           Our platform allows dealerships to have access to the most talented
           Business Managers in the country, at the touch of a button, while
           adding another layer of security to be 100% compliant to the entire

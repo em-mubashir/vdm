@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.3rem",
   },
   navbar: {
-    background: "transparent",
+    background: "black",
     position: "absolute",
     zIndex: 999,
   },
@@ -53,19 +53,19 @@ function MyNav() {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
+    <AppBar position='static'>
       <CssBaseline />
-      <Toolbar className={`${classes.navbar} w-full pt-10 vmd-navbar`}>
+      <Toolbar className={`${classes.navbar} w-full pt-6 pb-6 vmd-navbar`}>
         {isMobile ? (
           <MyDrawer />
         ) : (
           <>
-            <div className="">
-              <img src="/assets/logoWhite.svg" />
+            <div className=''>
+              <img src='/assets/logoWhite.svg' />
             </div>
             <div className={`flex place-content-center w-full mr-10 gap-16`}>
               <Link
-                to="/home"
+                to='/'
                 className={
                   isActive == "home" ? classes.activeLink : classes.link
                 }
@@ -79,7 +79,7 @@ function MyNav() {
                 onClick={() => {
                   setIsActive("contact");
                 }}
-                to="/"
+                to='/contact-us'
                 className={
                   isActive == "contact" ? classes.activeLink : classes.link
                 }
@@ -90,7 +90,7 @@ function MyNav() {
                 onClick={() => {
                   setIsActive("login");
                 }}
-                to="/"
+                to='/login'
                 className={
                   isActive == "login" ? classes.activeLink : classes.link
                 }
@@ -101,7 +101,7 @@ function MyNav() {
                 onClick={() => {
                   setIsActive("signup");
                 }}
-                to="/"
+                to='/signup'
                 className={
                   isActive == "signup" ? classes.activeLink : classes.link
                 }
