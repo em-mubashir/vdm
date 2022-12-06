@@ -4,30 +4,53 @@ import React from "react";
 function Why() {
   return (
     <div className='flex flex-col'>
-      <p className='text-[54px] text-center w-full font-bold p-[1.4rem] md:text-[1.8rem] md:p-[10px] xs:text-red-400'>
+      <p className='text-[50px] text-center w-full font-bold p-[1.4rem] md:text-[3rem] md:p-[40px] xs:text-red-400'>
         Why Choose Us
       </p>
-      <Box className='grid grid-cols-2 w-full img-text-div p-20 gap-x-10 gap-y-20 '>
+      <Box className='grid grid-cols-2 w-full p-12 gap-x-10 gap-y-20 '>
         {/* md:grid-cols-1 */}
-        <Box className='place-self-center md:w-full md:text-[1rem]'>
+        <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
           <img src='/assets/manager-selling.png' />
         </Box>
-        <Box className='p-10 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem]'>
-          Virtual Dealer Management is an innovative platform designed to launch
-          automobile dealers into the 21st century by allowing those dealers to
-          have income producing, product selling, finance managers available
-          24/7.
+        <Box className='pr-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem]'>
+          Using our platform connects you with the best of the best in the
+          industry. Never be left without personnel due to sudden increases in
+          business, employment vacancies, employee sickness, employee family
+          issues, or whatever the reason.
         </Box>
-        <Box className='p-10 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] '>
+        <Box className='pl-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] '>
           {/* md:row-start-4 */}
-          Our platform allows dealerships to have access to the most talented
-          Business Managers in the country, at the touch of a button, while
-          adding another layer of security to be 100% compliant to the entire
-          sales process. Each one of our presentations are digitally recorded
-          and reviewed by our company for compliance guidelines and also shared
-          with the Ownership and General Management of the dealership.
+          Our presentations, from beginning to end, are recorded to ensure 100%
+          compliance. These videos are reviewed by our team, and also provided
+          to the Dealership's appointed personnel for review and storage. This
+          allows us to make sure every delivery is transparent, ethical, and
+          follows the steps and information demanded from our clients.
         </Box>
-        <Box className='place-self-center md:w-full md:text-[1rem]'>
+        <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
+          <img src='/assets/salesman.png' />
+        </Box>
+
+        <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
+          <img src='/assets/manager-selling.png' />
+        </Box>
+        <Box className='pr-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem]'>
+          Get linked to top rated professionals that will present the products
+          that your Dealership wants to be presented, nothing more, nothing
+          less, every time. ESCs, CL & AH, GAP, alarms, etc, whatever products
+          you want sold are the ones we will present. We will not mark up rate
+          unless specifically directed to from the Owner or General Manager. We
+          get paid for performance. We don't get paid to show up.
+        </Box>
+
+        <Box className='pl-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] '>
+          {/* md:row-start-4 */}
+          No customer sensitive information is uploaded and/or disclosed to us.
+          We have your team input customer name, what they are buying, terms
+          agreed upon, and our agents will take it from there. Any tablet,
+          laptop, or desktop with a microphone and camera can be used to perform
+          the presentation.
+        </Box>
+        <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
           <img src='/assets/salesman.png' />
         </Box>
       </Box>

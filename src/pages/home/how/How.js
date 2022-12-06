@@ -4,33 +4,33 @@ import HowComponent from "./HowComponent";
 
 function How() {
   return (
-    <div className='flex flex-col'>
-      <p className='text-[54px] text-center w-[100%] font-bold p-[1.4rem]  sm:text-[1.5rem]'>
+    <div className='flex flex-col img-text-div mt-[4rem]'>
+      <p className='lg:text-[3rem] text-center w-[100%] font-bold pt-[5rem] text-[1.5rem]'>
         How Does It Work
       </p>
-      <Box className='grid grid-cols-3 w-full img-text-div p-20'>
+      <Box className='grid grid-cols-3 w-full p-20'>
         <HowComponent
-          imgSrc={"/assets/customerContactSeller.svg"}
+          imgSrc={"/assets/Group 238080.svg"}
           title={"Customer Contact Seller"}
           description={
-            "Name the brand or type of car you are looking for in the search bar. Our app will find you the perfect match."
+            "The Dealership Representative logs into our app. The Representative inputs basic information"
           }
         />
-        <div className='mt-[3rem] w-full'>
+        <div className='mt-[1rem] w-full'>
           <HowComponent
-            imgSrc={"/assets/videoConference.svg"}
+            imgSrc={"/assets/Vector.svg"}
             title={"Video Conference Between Customer And Presenter"}
             description={
-              "Name the brand or type of car you are  looking for in the search bar. Our app will find you the perfect match."
+              "Once complete, the app will connect the Representative and the Presenter to begin discussing the deal. Then the Representative introduces the customer to the Presenter and they go through a menu presentation"
             }
           />
         </div>
 
         <HowComponent
-          imgSrc={"/assets/closeTheDeal.svg"}
+          imgSrc={"/assets/Group 238082.svg"}
           title={"Close The Deal"}
           description={
-            "Name the brand or type of car you are looking for in the search bar. Our app will find you the perfect match."
+            "The Representative then prints the paperwork with the products that were sold, then the video conference is completed."
           }
         />
       </Box>

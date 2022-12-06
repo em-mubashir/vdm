@@ -2,15 +2,15 @@ import { Box, TextField, Button } from "@mui/material";
 import React from "react";
 function Contact() {
   return (
-    <Box className='flex flex-col w-full h-full mt-16 p-20'>
-      <span className='font-bold text-[54px] text-center w-full p-[1.4rem] sm:text-[1.5rem] sm:p-[10px]'>
-        Contact Us
+    <Box className='flex flex-col w-full h-full p-12'>
+      <span className='text-[34px] my-14 text-center w-full px-[25rem] sm:text-[1.5rem] '>
+        {/* sm:p-[10px] */}
+        Schedule your appointment below to discuss getting your Dealership
+        signed up for Virtual Dealer Management
       </span>
-      <Box className='grid contactUs sm:w-full sm:p-0 p-40'>
+      <Box className=' sm:w-full sm:p-0 p-40'>
         {/* ml-32 */}
-        <Box className='w-full h-full grid sm:place-self-center sm:pb-20'>
-          <img className='sm:hidden p-9' src='/assets/logoBlack.svg' />
-
+        {/* <Box className='w-full h-full grid sm:place-self-center sm:pb-20'>
           <Box className='grid grid-flow-col grid-auto-2 ml-8 text-[1.3rem] md:text-[1rem] sm:justify-center sm:mt-[20px] '>
             <img
               src='/assets/location.svg'
@@ -40,17 +40,17 @@ function Contact() {
               <img src='/assets/facebook.svg' />
             </Box>
           </Box>
-        </Box>
+        </Box> */}
         {/* Form Below */}
-        <Box className=' w-full h-full flex flex-col'>
-          <Box className='w-full h-full grid grid-cols-2 gap-20'>
+        <Box className=' w-full h-full flex flex-col px-64'>
+          <Box className='w-full h-full grid grid-cols-2 gap-12'>
             <TextField
               id='standard-number'
+              variant='outlined'
               label='First Name'
               InputLabelProps={{
                 shrink: true,
               }}
-              variant='standard'
             />
             <TextField
               id='standard-number'
@@ -58,7 +58,7 @@ function Contact() {
               InputLabelProps={{
                 shrink: true,
               }}
-              variant='standard'
+              variant='outlined'
             />
             <TextField
               id='standard-number'
@@ -66,7 +66,7 @@ function Contact() {
               InputLabelProps={{
                 shrink: true,
               }}
-              variant='standard'
+              variant='outlined'
             />
             <TextField
               id='standard-number'
@@ -74,7 +74,7 @@ function Contact() {
               InputLabelProps={{
                 shrink: true,
               }}
-              variant='standard'
+              variant='outlined'
             />
             <TextField
               id='standard-number'
@@ -82,7 +82,9 @@ function Contact() {
               InputLabelProps={{
                 shrink: true,
               }}
-              variant='standard'
+              minRows={6}
+              multiline={true}
+              variant='outlined'
               className='col-span-2'
             />
           </Box>

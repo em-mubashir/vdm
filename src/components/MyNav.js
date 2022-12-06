@@ -38,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
     background: "black",
     position: "absolute",
     zIndex: 999,
+    "padding-left": "50px",
+    "padding-right": "30px",
   },
 }));
 
@@ -63,7 +65,7 @@ function MyNav() {
             <div className=''>
               <img src='/assets/logoWhite.svg' />
             </div>
-            <div className={`flex place-content-center w-full mr-10 gap-16`}>
+            <div className={`flex place-content-end w-full mr-10 gap-16`}>
               <Link
                 to='/'
                 className={
