@@ -12,10 +12,10 @@ function Header() {
   return (
     <div className='home-container'>
       <Typography className='centered-text-img flex flex-col'>
-        <span className=' text-[100px] whitespace-nowrap md:text-[2.5rem] sm:text-[1.5rem] '>
+        <span className=' text-[100px] whitespace-nowrap md:text-[2.5rem] xs:text-[1.3rem] '>
           Income producing personnel available 24/7
         </span>
-        <span className=' text-[54px] whitespace-nowrap md:text-[1.4rem] sm:text-[0.9rem] '>
+        <span className=' text-[54px] whitespace-wrap md:text-[1.4rem] xs:text-[0.9rem] '>
           Finance Managers, Business Managers, Sales People, Service Writers,
           and many more!
         </span>

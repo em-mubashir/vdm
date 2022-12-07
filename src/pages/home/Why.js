@@ -4,10 +4,10 @@ import React from "react";
 function Why() {
   return (
     <div className='flex flex-col'>
-      <p className='text-[50px] text-center w-full font-bold p-[1.4rem] md:text-[3rem] md:p-[40px] xs:text-red-400'>
+      <p className='text-[50px] text-center w-full font-bold p-[1.4rem] md:text-[3rem] md:p-[40px] xs:text-black-400'>
         Why Choose Us
       </p>
-      <Box className='grid grid-cols-2 w-full p-12 gap-x-10 gap-y-20 '>
+      <Box className='grid grid-cols-2 w-full p-12 gap-x-10 gap-y-20 xs:grid-cols-1'>
         {/* md:grid-cols-1 */}
         <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
           <img src='/assets/manager-selling.png' />
