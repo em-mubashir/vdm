@@ -3,6 +3,7 @@ import "./index.css";
 import App from "./App";
 import "./styles/home.css";
 import "./styles/scss/index.scss";
+import "./styles/line-awesome-1.3.0/css/line-awesome.css";
 import reportWebVitals from "./reportWebVitals";
 import ReactDOM from "react-dom";
 
