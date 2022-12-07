@@ -12,13 +12,13 @@ function Why() {
         <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
           <img src='/assets/manager-selling.png' />
         </Box>
-        <Box className='pr-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem]'>
+        <Box className='pr-24 w-[80%] text-[1.6rem] font-thin	place-self-center md:w-full md:text-[1.6rem]'>
           Using our platform connects you with the best of the best in the
           industry. Never be left without personnel due to sudden increases in
           business, employment vacancies, employee sickness, employee family
           issues, or whatever the reason.
         </Box>
-        <Box className='pl-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] '>
+        <Box className='pl-24 w-[80%] text-[1.6rem] font-thin	place-self-center md:w-full md:text-[1.6rem] '>
           {/* md:row-start-4 */}
           Our presentations, from beginning to end, are recorded to ensure 100%
           compliance. These videos are reviewed by our team, and also provided
@@ -33,7 +33,7 @@ function Why() {
         <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
           <img src='/assets/manager-selling.png' />
         </Box>
-        <Box className='pr-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem]'>
+        <Box className='pr-24 w-[80%] text-[1.6rem] font-thin place-self-center md:w-full md:text-[1.6rem]'>
           Get linked to top rated professionals that will present the products
           that your Dealership wants to be presented, nothing more, nothing
           less, every time. ESCs, CL & AH, GAP, alarms, etc, whatever products
@@ -42,7 +42,7 @@ function Why() {
           get paid for performance. We don't get paid to show up.
         </Box>
 
-        <Box className='pl-24 w-[80%] text-[1.3rem] place-self-center md:w-full md:text-[1rem] '>
+        <Box className='pl-24 w-[80%] text-[1.6rem] font-thin place-self-center md:w-full md:text-[1.6rem] '>
           {/* md:row-start-4 */}
           No customer sensitive information is uploaded and/or disclosed to us.
           We have your team input customer name, what they are buying, terms

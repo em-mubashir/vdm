@@ -8,7 +8,7 @@ function How() {
       <p className='lg:text-[3rem] text-center w-[100%] font-bold pt-[5rem] text-[1.5rem]'>
         How Does It Work
       </p>
-      <Box className='grid grid-cols-3 w-full p-20'>
+      <Box className='grid grid-cols-3 w-full pb-40'>
         <HowComponent
           imgSrc={"/assets/Group 238080.svg"}
           title={"Customer Contact Seller"}
@@ -16,8 +16,9 @@ function How() {
             "The Dealership Representative logs into our app. The Representative inputs basic information"
           }
         />
-        <div className='mt-[1rem] w-full'>
+        <div className='mt-[6rem] w-full'>
           <HowComponent
+            width={"17%"}
             imgSrc={"/assets/Vector.svg"}
             title={"Video Conference Between Customer And Presenter"}
             description={

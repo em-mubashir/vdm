@@ -1,11 +1,11 @@
 import React from "react";
 import { Box } from "@mui/material";
-function HowComponent({ title, imgSrc, description }) {
+function HowComponent({ title, imgSrc, description, width }) {
   return (
     <Box className='flex flex-col w-full p-10 place-content-center gap-4'>
       <img
         src={imgSrc}
-        width='20%'
+        width={width || "20%"}
         height='30%'
         className='place-self-center'
       />

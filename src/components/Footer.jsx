@@ -5,43 +5,35 @@ import SocialsList1 from "./SocialList1";
 const widgetMenus = [
   {
     id: "5",
-    title: "Getting started",
+    title: "VDM",
     menus: [
-      { href: "#", label: "Installation" },
-      { href: "#", label: "Release Notes" },
-      { href: "#", label: "Upgrade Guide" },
-      { href: "#", label: "Browser Support" },
-      { href: "#", label: "Editor Support" },
+      { href: "/", label: "Home" },
+      { href: "/contact-us", label: "Contact Us" },
+      { href: "/login", label: "Login" },
+      { href: "/signup", label: "Signup" },
     ],
   },
+];
+
+const info = [
   {
-    id: "1",
-    title: "Explore",
-    menus: [
-      { href: "#", label: "Design features" },
-      { href: "#", label: "Prototyping" },
-      { href: "#", label: "Design systems" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Security" },
-    ],
+    icon: `${process.env.PUBLIC_URL}/assets/icon1.svg`,
+    desc: "Photo booth tattooed prism, portland taiyaki",
   },
   {
-    id: "2",
-    title: "Resources",
-    menus: [
-      { href: "#", label: "Best practices" },
-      { href: "#", label: "Support" },
-      { href: "#", label: "Developers" },
-      { href: "#", label: "Learn design" },
-      { href: "#", label: "Releases" },
-    ],
+    icon: `${process.env.PUBLIC_URL}/assets/icon2.svg`,
+    desc: "nc.example@example.com",
+  },
+  {
+    icon: `${process.env.PUBLIC_URL}/assets/icon3.svg`,
+    desc: "000-123-456-7890",
   },
 ];
 
 const Footer = () => {
   const renderWidgetMenuItem = (menu, index) => {
     return (
-      <div key={index} className='text-sm'>
+      <div key={index} className='text-sm pl-40'>
         <h2 className='font-semibold text-white dark:text-white'>
           {menu.title}
         </h2>
@@ -63,8 +55,8 @@ const Footer = () => {
   };
 
   return (
-    <div className=' nc-Footer bg-[#262626] relative py-24 lg:py-28 border-t border-neutral-200 dark:border-neutral-700'>
-      <div className='container grid grid-cols-2 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-10 '>
+    <div className=' nc-Footer bg-[#262626] relative pb-24 pt-40  border-t border-neutral-200 dark:border-neutral-700'>
+      <div className='container grid grid-cols-3 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-10 '>
         <div className='grid grid-cols-4 gap-5 col-span-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col'>
           <div className='col-span-2 md:col-span-1'>
             <Link
@@ -83,6 +75,17 @@ const Footer = () => {
           </div>
         </div>
         {widgetMenus.map(renderWidgetMenuItem)}
+        <div className='max-w-sm space-y-3'>
+          {info.map((item, index) => (
+            <div key={index} className='flex flex-row m-0'>
+              <img src={item.icon} className='mt-1.5' />
+              <span className='flex pl-3 block mt-2 text-white dark:text-white-400'>
+                {item.desc}
+              </span>
+            </div>
+          ))}
+          <div></div>
+        </div>
       </div>
     </div>
   );

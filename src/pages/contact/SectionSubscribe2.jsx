@@ -44,7 +44,7 @@ const SectionSubscribe2 = ({ className = "" }) => {
         </form>
       </div>
       <div className='flex-grow'>
-        <NcImage src={`${process.env.PUBLIC_URL}/assets/SVG-subcribe2.png`} />
+        <NcImage src={`${process.env.PUBLIC_URL}/assets/Asset 1.svg`} />
       </div>
     </div>
   );
