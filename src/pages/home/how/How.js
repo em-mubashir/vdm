@@ -8,7 +8,7 @@ function How() {
       <p className='lg:text-[3rem] text-center w-[100%] font-bold pt-[5rem] text-[1.5rem]'>
         How Does It Work
       </p>
-      <Box className='grid grid-cols-3 w-full pb-40 xs:grid-cols-1'>
+      <Box className='grid grid-cols-3 w-full pb-40 xs:grid-cols-1 md:grid-cols-3'>
         <HowComponent
           imgSrc={"/assets/Group 238080.svg"}
           title={"Customer Contact Seller"}

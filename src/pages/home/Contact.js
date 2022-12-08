@@ -3,12 +3,12 @@ import React from "react";
 function Contact() {
   return (
     <Box className='flex flex-col w-full h-full p-12 xs:p-0'>
-      <span className='text-[34px] my-14 text-center w-full px-[25rem] xs:text-[1.5rem] xs:px-0'>
+      <span className='text-[34px] my-14 text-center w-full px-[25rem] xs:text-[1.5rem] xs:px-0 md:text-[34px] md:px-[25rem]'>
         {/* sm:p-[10px] */}
         Schedule your appointment below to discuss getting your Dealership
         signed up for Virtual Dealer Management
       </span>
-      <Box className=' sm:w-full sm:p-0 p-40 xs:p-0'>
+      <Box className=' sm:w-full sm:p-0 p-40 xs:p-0 md:px-60'>
         {/* ml-32 */}
         {/* <Box className='w-full h-full grid sm:place-self-center sm:pb-20'>
           <Box className='grid grid-flow-col grid-auto-2 ml-8 text-[1.3rem] md:text-[1rem] sm:justify-center sm:mt-[20px] '>
@@ -42,7 +42,7 @@ function Contact() {
           </Box>
         </Box> */}
         {/* Form Below */}
-        <Box className=' w-full h-full flex flex-col px-64 xs:px-10'>
+        <Box className=' w-full h-full flex flex-col px-64 xs:px-10 '>
           <Box className='w-full h-full grid grid-cols-2 gap-12'>
             <TextField
               id='standard-number'
