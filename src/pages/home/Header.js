@@ -20,7 +20,7 @@ function Header() {
           and many more!
         </span>
       </Typography>
-      <img src='/assets/car.png' className='object-contain' />
+      <img src='/assets/car-dealer.png' className='object-contain' />
     </div>
   );
 }

@@ -31,7 +31,7 @@ function Why() {
         </Box>
 
         <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
-          <img src='/assets/manager-selling.png' />
+          <img src='/assets/blockimg1.jpeg' />
         </Box>
         <Box className='pr-24 w-[80%] text-[1.6rem] font-thin place-self-center md:w-full md:text-[1.6rem]'>
           Get linked to top rated professionals that will present the products
@@ -51,7 +51,7 @@ function Why() {
           the presentation.
         </Box>
         <Box className='place-self-center md:w-2/3 md:text-[1rem]'>
-          <img src='/assets/salesman.png' />
+          <img src='/assets/blockimg2.jpeg' />
         </Box>
       </Box>
     </div>
