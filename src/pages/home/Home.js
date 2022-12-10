@@ -14,7 +14,7 @@ export default function Home() {
       <Why />
       <How />
       <Contact />
-      <Register />
+      {/* <Register /> */}
     </div>
   );
 }

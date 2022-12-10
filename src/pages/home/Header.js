@@ -10,17 +10,21 @@ import React from "react";
 
 function Header() {
   return (
-    <div className='home-container'>
+    <div className='home-container xs:mt-[5rem]'>
       <Typography className='centered-text-img flex flex-col'>
-        <span className=' text-[100px] whitespace-nowrap md:text-[2.5rem] xs:text-[1.3rem] '>
+        <span className='  whitespace-nowrap md:text-[2.5rem] xs:text-[1rem] lg:text-[3.5rem] '>
           Income producing personnel available 24/7
         </span>
-        <span className=' text-[54px] whitespace-wrap md:text-[1.4rem] xs:text-[0.9rem] '>
+        <span className=' text-[54px] whitespace-wrap md:text-[1.4rem] xs:text-[0.7rem] lg:text-[2rem] '>
           Finance Managers, Business Managers, Sales People, Service Writers,
           and many more!
         </span>
       </Typography>
-      <img src='/assets/car-dealer.png' className='object-contain' />
+      <img
+        src='/assets/car-dealer.png'
+        className='object-contain'
+        width='100%'
+      />
     </div>
   );
 }

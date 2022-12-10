@@ -15,7 +15,7 @@ import { Box, TextField, Button } from "@mui/material";
 function Register() {
   return (
     <Box className='flex flex-col w-full h-full mb-6 xs:m-5 xs:mb-0 xs:ml-[3.5rem] xs:w-[80%] xs:mb-20 md:mb-6 md:w-full'>
-      <div className='flex flex-col relative top-28 bg-white p-20 z-50 rounded border-2 border-gray-100 mx-80 xs:mx-0 xs:top-0 xs:p-10 md:mx-80 md:top-36 md:p-20'>
+      <div className='flex flex-col relative top-28 bg-white p-20 z-50 rounded border-2 border-gray-100 mx-80 xs:mx-0 xs:top-0 xs:p-10 md:mx-80 md:top-36 md:p-20 lg:mx-[20rem] 2xl:mx-[35rem]'>
         <span className='font-bold text-[54px] text-center w-full p-[1.4rem] sm:text-[2.4rem] sm:p-[10px] md:p-[1.4rem]'>
           Let's stay in touch
         </span>

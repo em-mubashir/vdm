@@ -2,7 +2,7 @@ import { Box, TextField, Button } from "@mui/material";
 import React from "react";
 function Contact() {
   return (
-    <Box className='flex flex-col w-full h-full p-12 xs:p-0'>
+    <Box className='flex flex-col w-full h-full p-12 mb-16 xs:p-0'>
       <span className='text-[34px] my-14 text-center w-full px-[25rem] xs:text-[1.5rem] xs:px-0 md:text-[34px] md:px-[25rem]'>
         {/* sm:p-[10px] */}
         Schedule your appointment below to discuss getting your Dealership
