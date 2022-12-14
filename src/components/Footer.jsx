@@ -18,15 +18,15 @@ const widgetMenus = [
 const info = [
   {
     icon: `${process.env.PUBLIC_URL}/assets/icon1.svg`,
-    desc: "Photo booth tattooed prism, portland taiyaki",
+    desc: "514 Maple St, Ramona, Ca., 92065",
   },
   {
     icon: `${process.env.PUBLIC_URL}/assets/icon2.svg`,
-    desc: "nc.example@example.com",
+    desc: "chris.pozek@veteransrideshare.com",
   },
   {
     icon: `${process.env.PUBLIC_URL}/assets/icon3.svg`,
-    desc: "000-123-456-7890",
+    desc: "(888)270-4324",
   },
 ];
 
@@ -75,7 +75,10 @@ const Footer = () => {
           </div>
         </div>
         {widgetMenus.map(renderWidgetMenuItem)}
-        <div className='max-w-sm space-y-3'>
+        <div className='max-w-sm space-y-3 gap-5'>
+          <h2 className='font-semibold text-white dark:text-white mb-5 '>
+            Contact
+          </h2>
           {info.map((item, index) => (
             <div key={index} className='flex flex-row m-0'>
               <img src={item.icon} className='mt-1.5' />
