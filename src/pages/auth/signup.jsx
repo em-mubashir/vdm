@@ -217,7 +217,7 @@ const Signup = ({ className = "" }) => {
 
   return (
     <div className={`nc-PageSignUp    ${className}`} data-nc-id='PageSignUp'>
-      <div className='xs:grid-cols-1 xs:flex-col-reverse md:grid-cols-2 flex md:flex-row  mt-28 xs:mt-0 '>
+      <div className='xs:grid-cols-1 xs:flex-col-reverse md:grid-cols-2 flex md:flex-row  md:mt-28 xs:mt-0 '>
         <div className='w-full h-[48rem] overflow-y-scroll		'>
           <h2 className='my-10 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center'>
             Signup
