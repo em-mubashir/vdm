@@ -25,32 +25,35 @@ function DrawerComponent() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
+      <div className=''>
+        <img src='/assets/logoWhite.svg' style={{ height: "2.5rem" }} />
+      </div>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/">Home</Link>
+              <Link to='/'>Home</Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about">About</Link>
+              <Link to='/contact-us'>Contact Us</Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/contact">Contact</Link>
+              <Link to='/login'>Login</Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about">Faq</Link>
+              <Link to='/signup'>Sign Up</Link>
             </ListItemText>
           </ListItem>
         </List>
       </Drawer>
       <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-        <MenuIcon sx={{ color: "white" }} />
+        <MenuIcon fontSize={"large"} sx={{ color: "white" }} />
       </IconButton>
     </>
   );

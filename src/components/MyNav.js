@@ -38,8 +38,10 @@ const useStyles = makeStyles((theme) => ({
     background: "black",
     position: "absolute",
     zIndex: 999,
-    "padding-left": "50px",
+    "padding-left": "30px",
     "padding-right": "30px",
+    display: "flex",
+    "justify-content": "space-between",
   },
 }));
 
