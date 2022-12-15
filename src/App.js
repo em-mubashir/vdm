@@ -9,6 +9,7 @@ import React, { Suspense } from "react";
 import Signup from "./pages/auth/signup";
 import Login from "./pages/auth/login";
 import ContactUs from "./pages/contact";
+import Congratulations from "./pages/auth/greetings";
 import { blue, red, deepPurple } from "@mui/material/colors";
 import Footer from "./components/Footer";
 function App() {
@@ -60,6 +61,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/greetings' element={<Congratulations />} />
             <Route path='/contact-us' element={<ContactUs />} />
 
             {/* <Route path="/contact" element={<Home />} /> */}

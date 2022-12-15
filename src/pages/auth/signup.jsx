@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import * as Yup from "yup";
 import Axios from "axios";
-import { useLocation, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as constantsClass from "../../utils/constants";
 const {
@@ -14,7 +14,7 @@ const {
 
 const Signup = ({ className = "" }) => {
   // let history = useHistory();
-  const location = useLocation();
+  const navigate = useNavigate();
   const [depositData, setDepositData] = useState([]);
   const [identityData, setIdentityData] = useState([]);
   const [authorizedSMS, setAuthorizedSMS] = useState(1);
@@ -62,7 +62,6 @@ const Signup = ({ className = "" }) => {
   };
 
   useEffect(() => {
-    console.log("process .env ", process.env);
     const interval = setInterval(() => {
       setIsSlideActive((prevState) => !prevState);
     }, 3000);
@@ -92,20 +91,30 @@ const Signup = ({ className = "" }) => {
     lastName
   ) => {
     try {
-      Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/api/send/email`, {
+      Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/send/email`, {
         p_to_email: email,
         p_email_subject: emailVerificationSubject,
         p_email_content: `DEAR <strong>${firstName} ${lastName}</strong>, <br/><br/> ${emailVerificationContent} <br/> <a href="${emailVerificationLink}${emailVerificationCode}" target="_blank">CLICK HERE</a><br/><br/><br/>${REACT_APP_EMAIL_FOOTER}`,
       }).then((response) => {
         if (response.data.success) {
-          let path = `/Greetings`;
+          console.log(
+            "===================================================================="
+          );
+          navigate("/greetings", {
+            state: {
+              p_first_name: firstName,
+              p_last_name: lastName,
+              p_user_type: userType,
+              p_email: email,
+            },
+          });
           // history.push({
           //   pathname: path,
           //   state: {
-          //     p_first_name: firstName,
-          //     p_last_name: lastName,
-          //     p_user_type: userType,
-          //     p_email: email,
+          // p_first_name: firstName,
+          // p_last_name: lastName,
+          // p_user_type: userType,
+          // p_email: email,
           //   },
           // });
         }
@@ -126,7 +135,7 @@ const Signup = ({ className = "" }) => {
     lastName
   ) => {
     const response = await Axios.post(
-      `${REACT_APP_BACKEND_SERVER_URL}/api/Users/UpdateDocuments`,
+      `${REACT_APP_BACKEND_SERVER_URL}/Users/UpdateDocuments`,
       {
         p_user_id: newUserID,
         p_user_type: userType,
@@ -135,6 +144,8 @@ const Signup = ({ className = "" }) => {
       }
     );
     if (response.data.success) {
+      console.log("responseeeeeeeeeeee update docccccc", response);
+      sendEmailVerify(emailVerificationCode, email, firstName, lastName);
       if (
         fieldName == "dealer_other_products_cost_sheet" ||
         fieldName == "presenter_w9_form"
@@ -146,11 +157,20 @@ const Signup = ({ className = "" }) => {
   };
   const sendUserRegistationNotification = (firstName, lastName) => {
     try {
-      Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/api/send/email`, {
+      Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/send/email`, {
         p_to_email: emailUserRegistrationReceiver,
         p_email_subject: emailUserRegistrationSubject,
         p_email_content: `DEAR CCD REPRESENTATIVE,<br/><br/> A NEW <strong>${userType} ${firstName} ${lastName}</strong>, ${emailUserRegistrationContent} <br/><br/><br/>${REACT_APP_EMAIL_FOOTER}`,
-      }).then((response) => {});
+      }).then((response) => {
+        navigate("/greetings", {
+          state: {
+            p_first_name: firstName,
+            p_last_name: lastName,
+            p_user_type: userType,
+            p_email: emailUserRegistrationReceiver,
+          },
+        });
+      });
     } catch (error) {
       console.error(error.message);
     }
@@ -168,17 +188,13 @@ const Signup = ({ className = "" }) => {
     // If file selected
     if (selectedFile) {
       data.append("profileImage", selectedFile, selectedFile.name);
-      await Axios.post(
-        `${REACT_APP_BACKEND_SERVER_URL}/api/file/upload`,
-        data,
-        {
-          headers: {
-            Accept: "*/*",
-            "Accept-Language": "en-US,en;q=0.8",
-            "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
-          },
-        }
-      )
+      await Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/file/upload`, data, {
+        headers: {
+          Accept: "*/*",
+          "Accept-Language": "en-US,en;q=0.8",
+          "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
+        },
+      })
         .then((response) => {
           if (200 === response.status) {
             // If file size is larger than expected.
@@ -725,18 +741,15 @@ const Signup = ({ className = "" }) => {
                 // setSubmitting(false);
                 var flag = true;
                 var statusLine = "";
-                Axios.post(
-                  `${REACT_APP_BACKEND_SERVER_URL}/api/Users/CheckEmail`,
-                  {
-                    p_email: email,
-                  }
-                ).then((response) => {
+                Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/Users/CheckEmail`, {
+                  p_email: email,
+                }).then((response) => {
                   if (!response.data.success) {
                     flag = false;
                     statusLine = response.data.message + " ";
                   }
                   Axios.post(
-                    `${REACT_APP_BACKEND_SERVER_URL}/api/Users/CheckUsername`,
+                    `${REACT_APP_BACKEND_SERVER_URL}/Users/CheckUsername`,
                     {
                       p_username: username,
                     }
@@ -747,7 +760,7 @@ const Signup = ({ className = "" }) => {
                     }
                     if (flag) {
                       Axios.post(
-                        `${REACT_APP_BACKEND_SERVER_URL}/api/Users/Register`,
+                        `${REACT_APP_BACKEND_SERVER_URL}/Users/Register`,
                         {
                           p_first_name: firstName,
                           p_last_name: lastName,
@@ -777,78 +790,82 @@ const Signup = ({ className = "" }) => {
                           p_terms_accepted: termsAccepted,
                           p_user_type: userType,
                         }
-                      ).then((response) => {
-                        if (response.data.success) {
-                          if (userType == "Dealer") {
-                            SingleFileUploadHandler(
-                              files_ref_esc.current.files[0],
-                              "dealer_esc_cost_sheet",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
-                            SingleFileUploadHandler(
-                              files_ref_gap.current.files[0],
-                              "dealer_gap_cost_sheet",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
-                            SingleFileUploadHandler(
-                              files_ref_logo.current.files[0],
-                              "dealer_logo",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
-                            SingleFileUploadHandler(
-                              files_ref_other.current.files[0],
-                              "dealer_other_products_cost_sheet",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
-                          } else if (userType == "Presenter") {
-                            SingleFileUploadHandler(
-                              files_ref_front.current.files[0],
-                              "presenter_identity_type_front",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
-                            SingleFileUploadHandler(
-                              files_ref_back.current.files[0],
-                              "presenter_identity_type_back",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
-                            SingleFileUploadHandler(
-                              files_ref_w9.current.files[0],
-                              "presenter_w9_form",
-                              response.data.user_id,
-                              response.data.email_verify_code,
-                              email,
-                              firstName,
-                              lastName
-                            );
+                      )
+                        .then((response) => {
+                          if (response.data.success) {
+                            if (userType == "Dealer") {
+                              SingleFileUploadHandler(
+                                files_ref_esc.current.files[0],
+                                "dealer_esc_cost_sheet",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                              SingleFileUploadHandler(
+                                files_ref_gap.current.files[0],
+                                "dealer_gap_cost_sheet",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                              SingleFileUploadHandler(
+                                files_ref_logo.current.files[0],
+                                "dealer_logo",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                              SingleFileUploadHandler(
+                                files_ref_other.current.files[0],
+                                "dealer_other_products_cost_sheet",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                            } else if (userType == "Presenter") {
+                              SingleFileUploadHandler(
+                                files_ref_front.current.files[0],
+                                "presenter_identity_type_front",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                              SingleFileUploadHandler(
+                                files_ref_back.current.files[0],
+                                "presenter_identity_type_back",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                              SingleFileUploadHandler(
+                                files_ref_w9.current.files[0],
+                                "presenter_w9_form",
+                                response.data.user_id,
+                                response.data.email_verify_code,
+                                email,
+                                firstName,
+                                lastName
+                              );
+                            }
+                          } else {
+                            alert(response.data.message);
                           }
-                        } else {
-                          alert(response.data.message);
-                        }
-                      });
+                        })
+                        .catch((e) => {
+                          console.log("========, in error ", e);
+                        });
                     } else {
                       setStatus(statusLine);
                       setSubmitting(false);
