@@ -1,30 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 // import facebookSvg from `${process.env.PUBLIC_URL }/assets/Facebook.svg`;
 // import twitterSvg from "images/Twitter.svg";
 // import googleSvg from "images/google.svg";
+import { ThreeDots } from "react-loader-spinner";
+import Axios from "axios";
 import Header from "../home/Header";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-
-const loginSocials = [
-  {
-    name: "Continue with Facebook",
-    href: "#",
-    icon: `${process.env.PUBLIC_URL}/assets/Facebook.svg`,
-  },
-  {
-    name: "Continue with Twitter",
-    href: "#",
-    icon: `${process.env.PUBLIC_URL}/assets/twitter.svg`,
-  },
-  {
-    name: "Continue with Google",
-    href: "#",
-    icon: `${process.env.PUBLIC_URL}/assets/google.svg`,
-  },
-];
+const { REACT_APP_BACKEND_SERVER_URL } = process.env;
 
 const Login = ({ className = "" }) => {
+  const [authError, setAuthError] = useState(null);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const login = (email, pass) => {
+    setAuthError(null);
+    try {
+      Axios.post(`${REACT_APP_BACKEND_SERVER_URL}/Users/Authenticate`, {
+        p_user_name: email,
+        p_user_pass: pass,
+      }).then((response) => {
+        setLoading(false);
+        if (!response.data.success) {
+          setError(response.data.message);
+        } else console.log("response", response, response.status);
+      });
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+    }
+    // signIn?.(passcode)
+    //   .then(() => {
+    //     history.replace(location?.state?.from || { pathname: "/" });
+    //   })
+    //   .catch((err) => setAuthError(err));
+  };
+  const handleSubmit = (e) => {
+    setLoading(true);
+    e.preventDefault();
+    login(e.target[0].value, e.target[1].value);
+  };
   return (
     <div className={`nc-PageLogin ${className}`} data-nc-id='PageLogin'>
       <Helmet>
@@ -35,24 +51,6 @@ const Login = ({ className = "" }) => {
           Login
         </h2>
         <div className='max-w-md mx-auto space-y-6'>
-          <div className='grid gap-3'>
-            {loginSocials.map((item, index) => (
-              <a
-                key={index}
-                href={item.href}
-                className='nc-will-change-transform flex w-full rounded-lg bg-primary-50 dark:bg-neutral-800 px-4 py-3 transform transition-transform sm:px-6 hover:translate-y-[-2px]'
-              >
-                <img
-                  className='flex-shrink-0'
-                  src={item.icon}
-                  alt={item.name}
-                />
-                <h3 className='flex-grow text-center text-sm font-medium text-neutral-700 dark:text-neutral-300 sm:text-sm'>
-                  {item.name}
-                </h3>
-              </a>
-            ))}
-          </div>
           {/* OR */}
           <div className='relative text-center'>
             <span className='relative z-10 inline-block px-4 font-medium text-sm bg-white dark:text-neutral-400 dark:bg-neutral-900'>
@@ -61,7 +59,7 @@ const Login = ({ className = "" }) => {
             <div className='absolute left-0 w-full top-1/2 transform -translate-y-1/2 border border-neutral-100 dark:border-neutral-800'></div>
           </div>
           {/* FORM */}
-          <form className='grid grid-cols-1 gap-6' action='#' method='post'>
+          <form className='grid grid-cols-1 gap-6' onSubmit={handleSubmit}>
             <label className='block'>
               <span className='text-neutral-800 dark:text-neutral-200'>
                 Email address
@@ -84,14 +82,30 @@ const Login = ({ className = "" }) => {
                 className={`block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3 mt-1`}
               />
             </label>
-            <button
-              //   disabled={disabled || loading}
-              className={`nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6 text-neutral-700 dark:text-neutral-200 ttnc-ButtonPrimary disabled:bg-opacity-70 bg-primary-6000 hover:bg-primary-700 text-neutral-50 `}
-              //   onClick={onClick}
-              type='submit'
-            >
-              Continue
-            </button>
+            <span className='text-red-700'>{error}</span>
+            {loading ? (
+              <div className='flex items-center justify-center'>
+                <ThreeDots
+                  height='80'
+                  width='80'
+                  radius='9'
+                  color='black'
+                  ariaLabel='three-dots-loading'
+                  wrapperStyle={{}}
+                  wrapperClassName=''
+                  visible={true}
+                />
+              </div>
+            ) : (
+              <button
+                //   disabled={disabled || loading}
+                className={`nc-Button relative h-auto inline-flex items-center justify-center rounded-full transition-colors text-sm sm:text-base font-medium px-4 py-3 sm:px-6 text-neutral-700 dark:text-neutral-200 ttnc-ButtonPrimary disabled:bg-opacity-70 bg-primary-6000 hover:bg-primary-700 text-neutral-50 `}
+                //   onClick={onClick}
+                type='submit'
+              >
+                Continue
+              </button>
+            )}
           </form>
 
           {/* ==== */}

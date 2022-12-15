@@ -62,6 +62,7 @@ const Signup = ({ className = "" }) => {
   };
 
   useEffect(() => {
+    console.log("process .env ", process.env);
     const interval = setInterval(() => {
       setIsSlideActive((prevState) => !prevState);
     }, 3000);
