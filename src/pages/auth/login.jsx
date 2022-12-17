@@ -7,6 +7,8 @@ import Axios from "axios";
 import Header from "../home/Header";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+const sign = require("jwt-encode");
+
 const { REACT_APP_BACKEND_SERVER_URL } = process.env;
 
 const Login = ({ className = "" }) => {
@@ -22,6 +24,9 @@ const Login = ({ className = "" }) => {
         p_user_pass: pass,
       }).then((response) => {
         setLoading(false);
+        const jwt = sign(response, "vdm-secrete-private");
+        console.log("tokennnnnnnn jwt", jwt);
+        window.location.href = `http://localhost:3000/login?token=${jwt}`;
         if (!response.data.success) {
           setError(response.data.message);
         } else console.log("response", response, response.status);
@@ -44,7 +49,7 @@ const Login = ({ className = "" }) => {
   return (
     <div className={`nc-PageLogin ${className}`} data-nc-id='PageLogin'>
       <Helmet>
-        <title>Login || Booking React Template</title>
+        <title>Login || VDM</title>
       </Helmet>
       <div className='container mb-24 mt-48 lg:mb-32'>
         <h2 className='my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center'>
@@ -62,10 +67,10 @@ const Login = ({ className = "" }) => {
           <form className='grid grid-cols-1 gap-6' onSubmit={handleSubmit}>
             <label className='block'>
               <span className='text-neutral-800 dark:text-neutral-200'>
-                Email address
+                Username \ Email
               </span>
               <input
-                type='email'
+                type='text'
                 placeholder='example@example.com'
                 className={`block w-full border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3 mt-1`}
               />

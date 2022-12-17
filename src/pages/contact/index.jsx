@@ -27,7 +27,7 @@ const ContactUs = ({ className = "" }) => {
   return (
     <div className={`nc-PageContact overflow-hidden `} data-nc-id='PageContact'>
       <Helmet>
-        <title>Contact || Booking React Template</title>
+        <title>Contact || VDM</title>
       </Helmet>
       <div className='mb-24 mt-48 lg:mb-32'>
         <h2 className='my-16 sm:my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center'>
