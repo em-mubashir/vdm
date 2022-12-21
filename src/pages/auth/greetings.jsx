@@ -3,10 +3,6 @@ import { useLocation } from "react-router-dom";
 
 const Congratulations = (props) => {
   const location = useLocation();
-  // const history = useHistory();
-  React.useEffect(() => {
-    console.log("locationlocation", location);
-  }, []);
   return (
     <div className='h-[30rem] mt-48 flex flex-col	items-center mx-4'>
       <form>
