@@ -24,8 +24,7 @@ const Login = ({ className = "" }) => {
         p_user_pass: pass,
       }).then((response) => {
         setLoading(false);
-        const jwt = sign({ email, pass }, "vdm-secrete-private");
-        console.log("tokennnnnnnn jwt", jwt);
+        const jwt = sign(response, "vdm-secrete-private");
         window.location.href = `http://localhost:3000/login/${jwt}`;
         if (!response.data.success) {
           setError(response.data.message);
