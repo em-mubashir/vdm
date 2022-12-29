@@ -25,7 +25,7 @@ const Login = ({ className = "" }) => {
       }).then((response) => {
         setLoading(false);
         const jwt = sign(response, "vdm-secrete-private");
-        window.location.href = `https://www.virtualdealermanagement.com/login/${jwt}`;
+        window.location.href = `https://dash.virtualdealermanagement.com/login/${jwt}`;
         if (!response.data.success) {
           setError(response.data.message);
         } else console.log("response", response, response.status);
