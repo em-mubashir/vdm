@@ -1,11 +1,5 @@
 import "./App.css";
-import {
-  BrowserRouter,
-  MemoryRouter,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // import Home from "./pages/home/Home";
 import { CircularProgress, Box, Typography } from "@mui/material";
 import MyNav from "./components/MyNav";
@@ -60,7 +54,7 @@ function App() {
           </Box>
         }
       >
-        <MemoryRouter>
+        <BrowserRouter>
           <MyNav />
           <Routes>
             {/* <Route path='/' element={<Navigate to='/' />} /> */}
@@ -73,7 +67,7 @@ function App() {
             {/* <Route path="/contact" element={<Home />} /> */}
           </Routes>
           <Footer />
-        </MemoryRouter>
+        </BrowserRouter>
       </Suspense>
     </ThemeProvider>
   );
