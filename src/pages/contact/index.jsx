@@ -11,15 +11,15 @@ import BackgroundSection from "./BackgroundSection";
 const info = [
   {
     title: "🗺 ADDRESS",
-    desc: "Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter",
+    desc: "514 Maple St, Ramona, Ca., 92065",
   },
   {
     title: "💌 EMAIL",
-    desc: "nc.example@example.com",
+    desc: "chris.pozek@veteransrideshare.com",
   },
   {
     title: "☎ PHONE",
-    desc: "000-123-456-7890",
+    desc: "(888)270-4324",
   },
 ];
 
